@@ -114,3 +114,6 @@ GO
 ALTER TABLE [dbo].[MatHang] CHECK CONSTRAINT [FK_MatHang_NhaCC]
 GO
 
+INSERT into KhachHang VALUES (N'Đoàn Quang Huy', N'0859476166', NULL)
+select * from khachhang
+update khachhang set TenKH = N'Đoàn Quang Huy', SoDienThoai = 9874561230, diachigh = N'Phan Rang' where makh = 26
