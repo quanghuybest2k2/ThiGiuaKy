@@ -87,6 +87,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmHoaDonBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDonBH.Designer.cs">
+      <DependentUpon>frmHoaDonBH.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmHoaDonBH.resx">
+      <DependentUpon>frmHoaDonBH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLy.resx">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
     </EmbeddedResource>

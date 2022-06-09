@@ -23,7 +23,7 @@ namespace De1
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "select * from KhachHang";
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            System.Data.DataTable tb = new System.Data.DataTable();
+            DataTable tb = new DataTable();
             conn.Open();
             adapter.Fill(tb);
             conn.Close();
