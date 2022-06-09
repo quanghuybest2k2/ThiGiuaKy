@@ -53,14 +53,11 @@ namespace De1
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiXoaKhachHang = new System.Windows.Forms.ToolStripMenuItem();
-            this.qLBanHang = new De1.QLBanHang();
             this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.khachHangTableAdapter = new De1.QLBanHangTableAdapters.KhachHangTableAdapter();
             this.gbTimkiem.SuspendLayout();
             this.gbDSKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachKH)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLBanHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -272,17 +269,13 @@ namespace De1
             // 
             // qLBanHang
             // 
-            this.qLBanHang.DataSetName = "QLBanHang";
-            this.qLBanHang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // khachHangBindingSource
             // 
             this.khachHangBindingSource.DataMember = "KhachHang";
-            this.khachHangBindingSource.DataSource = this.qLBanHang;
             // 
             // khachHangTableAdapter
             // 
-            this.khachHangTableAdapter.ClearBeforeFill = true;
             // 
             // frmQuanLy
             // 
@@ -310,7 +303,6 @@ namespace De1
             this.gbDSKhachHang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachKH)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.qLBanHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,9 +334,7 @@ namespace De1
         private System.Windows.Forms.DataGridViewTextBoxColumn colDiaChiGD;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiXoaKhachHang;
-        private QLBanHang qLBanHang;
         private System.Windows.Forms.BindingSource khachHangBindingSource;
-        private QLBanHangTableAdapters.KhachHangTableAdapter khachHangTableAdapter;
     }
 }
 

@@ -95,11 +95,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLBanHang.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBanHang.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmQuanLy.resx">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,17 +117,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLBanHang.xsc">
-      <DependentUpon>QLBanHang.xsd</DependentUpon>
-    </None>
-    <None Include="QLBanHang.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBanHang.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBanHang.xss">
-      <DependentUpon>QLBanHang.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
