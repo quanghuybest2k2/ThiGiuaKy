@@ -37,6 +37,10 @@ namespace De1
             this.lblPhanTramGD = new System.Windows.Forms.Label();
             this.lblPhaiTra = new System.Windows.Forms.Label();
             this.dtgvMatHang = new System.Windows.Forms.DataGridView();
+            this.colTenHang = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLuuHoaDon = new System.Windows.Forms.Button();
             this.btnHuyHoaDon = new System.Windows.Forms.Button();
             this.btnChonHD = new System.Windows.Forms.Button();
@@ -47,10 +51,6 @@ namespace De1
             this.dtpNgayXuat = new System.Windows.Forms.DateTimePicker();
             this.cbbKhachHang = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
-            this.colTenHang = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMatHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nrudGiamGia)).BeginInit();
             this.SuspendLayout();
@@ -133,6 +133,33 @@ namespace De1
             this.dtgvMatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvMatHang.Size = new System.Drawing.Size(561, 192);
             this.dtgvMatHang.TabIndex = 2;
+            this.dtgvMatHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvMatHang_CellContentClick);
+            // 
+            // colTenHang
+            // 
+            this.colTenHang.DataPropertyName = "MaMatHang";
+            this.colTenHang.HeaderText = "Tên hàng";
+            this.colTenHang.Name = "colTenHang";
+            this.colTenHang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTenHang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.DataPropertyName = "SoLuong";
+            this.colSoLuong.HeaderText = "Số lượng";
+            this.colSoLuong.Name = "colSoLuong";
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.DataPropertyName = "DonGia";
+            this.colDonGia.HeaderText = "Đơn giá";
+            this.colDonGia.Name = "colDonGia";
+            // 
+            // colThanhTien
+            // 
+            this.colThanhTien.DataPropertyName = "thanhtien";
+            this.colThanhTien.HeaderText = "Thành tiền";
+            this.colThanhTien.Name = "colThanhTien";
             // 
             // btnLuuHoaDon
             // 
@@ -168,7 +195,6 @@ namespace De1
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(119, 20);
             this.txtTongTien.TabIndex = 4;
-            this.txtTongTien.TextChanged += new System.EventHandler(this.txtTongTien_TextChanged);
             // 
             // nrudGiamGia
             // 
@@ -222,32 +248,6 @@ namespace De1
             this.btnThem.Text = "+";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // colTenHang
-            // 
-            this.colTenHang.DataPropertyName = "MaMatHang";
-            this.colTenHang.HeaderText = "Tên hàng";
-            this.colTenHang.Name = "colTenHang";
-            this.colTenHang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTenHang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.DataPropertyName = "SoLuong";
-            this.colSoLuong.HeaderText = "Số lượng";
-            this.colSoLuong.Name = "colSoLuong";
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.DataPropertyName = "DonGia";
-            this.colDonGia.HeaderText = "Đơn giá";
-            this.colDonGia.Name = "colDonGia";
-            // 
-            // colThanhTien
-            // 
-            this.colThanhTien.DataPropertyName = "thanhtien";
-            this.colThanhTien.HeaderText = "Thành tiền";
-            this.colThanhTien.Name = "colThanhTien";
             // 
             // frmHoaDonBH
             // 

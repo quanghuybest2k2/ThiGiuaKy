@@ -63,13 +63,22 @@ namespace De1
             
         }
 
-        private void txtTongTien_TextChanged(object sender, EventArgs e)
+        private void dtgvMatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtgvMatHang.Rows.Count>0)
+            DataGridViewRow row = dtgvMatHang.Rows[e.RowIndex];
+            string TongTien = row.Cells[4].Value.ToString();
+            txtTongTien.Text = TongTien;
+            ////
+            if (nrudGiamGia.Value==0)
             {
-                string TongTien;
-
-                TongTien = txtTongTien.Text;
+                txtPhaiTra.Text = TongTien;
+            }
+            else
+            {
+                int tongTien = Convert.ToInt32(TongTien);
+                int PhanTramGG = Convert.ToInt32(nrudGiamGia.Value);
+                int DuocGiam = tongTien * PhanTramGG / 100;
+                txtPhaiTra.Text = DuocGiam.ToString();
             }
         }
     }
