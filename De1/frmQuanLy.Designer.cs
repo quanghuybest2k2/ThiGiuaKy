@@ -50,15 +50,13 @@ namespace De1
             this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDiaChiGD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnXuatExcel = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiXoaKhachHang = new System.Windows.Forms.ToolStripMenuItem();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnXuatExcel = new System.Windows.Forms.Button();
             this.gbTimkiem.SuspendLayout();
             this.gbDSKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachKH)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -243,16 +241,6 @@ namespace De1
             this.colDiaChiGD.HeaderText = "Địa chỉ giao hàng";
             this.colDiaChiGD.Name = "colDiaChiGD";
             // 
-            // btnXuatExcel
-            // 
-            this.btnXuatExcel.Location = new System.Drawing.Point(634, 193);
-            this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnXuatExcel.TabIndex = 1;
-            this.btnXuatExcel.Text = "Xuất Excel";
-            this.btnXuatExcel.UseVisualStyleBackColor = true;
-            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -263,19 +251,19 @@ namespace De1
             // tsmiXoaKhachHang
             // 
             this.tsmiXoaKhachHang.Name = "tsmiXoaKhachHang";
-            this.tsmiXoaKhachHang.Size = new System.Drawing.Size(180, 22);
+            this.tsmiXoaKhachHang.Size = new System.Drawing.Size(159, 22);
             this.tsmiXoaKhachHang.Text = "Xóa khách hàng";
             this.tsmiXoaKhachHang.Click += new System.EventHandler(this.tsmiXoaKhachHang_Click);
             // 
-            // qLBanHang
+            // btnXuatExcel
             // 
-            // 
-            // khachHangBindingSource
-            // 
-            this.khachHangBindingSource.DataMember = "KhachHang";
-            // 
-            // khachHangTableAdapter
-            // 
+            this.btnXuatExcel.Location = new System.Drawing.Point(634, 193);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnXuatExcel.TabIndex = 1;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // frmQuanLy
             // 
@@ -297,13 +285,13 @@ namespace De1
             this.Name = "frmQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khách hàng";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmQuanLy_FormClosed);
             this.Load += new System.EventHandler(this.frmQuanLy_Load);
             this.gbTimkiem.ResumeLayout(false);
             this.gbTimkiem.PerformLayout();
             this.gbDSKhachHang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachKH)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,7 +322,6 @@ namespace De1
         private System.Windows.Forms.DataGridViewTextBoxColumn colDiaChiGD;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiXoaKhachHang;
-        private System.Windows.Forms.BindingSource khachHangBindingSource;
     }
 }
 

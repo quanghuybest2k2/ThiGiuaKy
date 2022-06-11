@@ -8,9 +8,11 @@ namespace De1
 {
     public partial class frmQuanLy : Form
     {
+        //frmHoaDonBH frm;
         public frmQuanLy()
         {
             InitializeComponent();
+            //frm = _frm;
         }
 
         private void frmQuanLy_Load(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace De1
                 conn.Close();
                 loadKhachHang();
                 btnMacDinh.PerformClick();
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -110,15 +113,14 @@ namespace De1
             {
                 //sử dụng thuộc tính RowFilter để tìm kiếm theo tên "TenKH"
                 string rowFilter = string.Format("{0} like '{1}'", "TenKH", "*" + txtTimKiem.Text + "*");
-                (dtgvDanhSachKH.DataSource as System.Data.DataTable).DefaultView.RowFilter = rowFilter;
+                (dtgvDanhSachKH.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
             }
             if (rdTheoSDT.Checked)
             {
-                //sử dụng thuộc tính RowFilter để tìm kiếm theo tên "SoDienThoai"
+                //sử dụng thuộc tính RowFilter để tìm kiếm theo sdt "SoDienThoai"
                 string rowFilter = string.Format("{0} like '{1}'", "SoDienThoai", "*" + txtTimKiem.Text + "*");
                 (dtgvDanhSachKH.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
             }
-
         }
         private void ExportExcel(string path)
         {
@@ -156,6 +158,13 @@ namespace De1
                     MessageBox.Show("Lỗi xuất file!\n" + ex.Message);
                 }
             }
+        }
+
+        public void frmQuanLy_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //int index = cbbKhachHang.SelectedIndex;
+            //cbbKhachHang.SelectedIndex = -1;
+            //cbbKhachHang.SelectedIndex = index;
         }
     }
 }

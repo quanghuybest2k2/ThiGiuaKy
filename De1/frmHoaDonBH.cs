@@ -24,6 +24,7 @@ namespace De1
             displayKhachHang();
             displayMatHang();
         }
+
         private void displayKhachHang()
         {
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-QDTENRH\SQLEXPRESS;Initial Catalog=QLBanHang;Integrated Security=True");
@@ -35,9 +36,10 @@ namespace De1
             adapter.Fill(tb);
             conn.Close();
             conn.Dispose();
-            cbbKhachHang.DataSource = tb;
             cbbKhachHang.DisplayMember = "TenKH";
             cbbKhachHang.ValueMember = "MaKH";
+            cbbKhachHang.DataSource = tb;
+
         }
         private void displayMatHang()
         {
@@ -55,12 +57,17 @@ namespace De1
             combo.DisplayMember = "TenMatHang";
             combo.ValueMember = "MaMatHang";
             combo.DataSource = tb;
+            //displayKhachHang();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmQuanLy frm = new frmQuanLy();
-            frm.ShowDialog();
-            
+            //frm.FormClosed += new FormClosedEventHandler(frm.frmQuanLy_FormClosed);
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                displayKhachHang();
+                cbbKhachHang.SelectedValue = 30;
+            }
         }
 
         private void dtgvMatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -69,7 +76,7 @@ namespace De1
             string TongTien = row.Cells[4].Value.ToString();
             txtTongTien.Text = TongTien;
             ////
-            if (nrudGiamGia.Value==0)
+            if (nrudGiamGia.Value == 0)
             {
                 txtPhaiTra.Text = TongTien;
             }
