@@ -57,11 +57,18 @@ namespace De3
             if (dtgvDanhSachMH.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dtgvDanhSachMH.Rows[e.RowIndex];
-                txtMaMH.Text = row.Cells[0].Value.ToString();
-                txtTenMH.Text = row.Cells[1].Value.ToString();
-                cbbLoaiMH.Text = row.Cells[2].Value.ToString();
-                nrudSoLuong.Value = decimal.Parse(row.Cells[3].Value.ToString());
-                nrudDonGia.Value = decimal.Parse(row.Cells[4].Value.ToString());
+                //txtMaMH.Text = row.Cells[0].Value.ToString();
+                //txtTenMH.Text = row.Cells[1].Value.ToString();
+                //cbbLoaiMH.Text = row.Cells[2].Value.ToString();
+                //nrudSoLuong.Value = decimal.Parse(row.Cells[3].Value.ToString());
+                //nrudDonGia.Value = decimal.Parse(row.Cells[4].Value.ToString());
+                string maHH = row.Cells[0].Value.ToString();
+                string TenMH = row.Cells[1].Value.ToString();
+                string loaiMH = row.Cells[2].Value.ToString();
+                decimal soLuong = decimal.Parse(row.Cells[3].Value.ToString());
+                decimal donGia = decimal.Parse(row.Cells[4].Value.ToString());
+                frmHienThi frmHienThi = new frmHienThi(maHH, TenMH, loaiMH, soLuong, donGia);
+                frmHienThi.ShowDialog();
             }
         }
         private void Reset()
@@ -177,6 +184,14 @@ namespace De3
         {
             HienThiMatHang();
             cbbLoaiMH.Text = frmThemLoaiMH.MHMoiThem;
+        }
+
+        private void dtgvDanhSachMH_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                
+            }
         }
     }
 }

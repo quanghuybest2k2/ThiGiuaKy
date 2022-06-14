@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmHienThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHienThi.Designer.cs">
+      <DependentUpon>frmHienThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanLyShop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmHienThi.resx">
+      <DependentUpon>frmHienThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyShop.resx">
       <DependentUpon>frmQuanLyShop.cs</DependentUpon>
     </EmbeddedResource>
