@@ -62,12 +62,13 @@ namespace De1
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmQuanLy frm = new frmQuanLy();
-            //frm.FormClosed += new FormClosedEventHandler(frm.frmQuanLy_FormClosed);
-            if(frm.ShowDialog() == DialogResult.OK)
-            {
-                displayKhachHang();
-                cbbKhachHang.SelectedValue = 30;
-            }
+            frm.FormClosed += new FormClosedEventHandler(frmQuanLy_FormClosed);
+            frm.Show(this);
+        }
+        private void frmQuanLy_FormClosed(object sender, EventArgs e)
+        {
+            displayKhachHang();
+            cbbKhachHang.Text = frmQuanLy.KHMoiThem;
         }
 
         private void dtgvMatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)

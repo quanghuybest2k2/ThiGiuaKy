@@ -285,7 +285,6 @@ namespace De1
             this.Name = "frmQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khách hàng";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmQuanLy_FormClosed);
             this.Load += new System.EventHandler(this.frmQuanLy_Load);
             this.gbTimkiem.ResumeLayout(false);
             this.gbTimkiem.PerformLayout();

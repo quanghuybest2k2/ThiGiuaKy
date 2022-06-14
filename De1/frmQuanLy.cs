@@ -8,11 +8,10 @@ namespace De1
 {
     public partial class frmQuanLy : Form
     {
-        //frmHoaDonBH frm;
+        public static string KHMoiThem;
         public frmQuanLy()
         {
             InitializeComponent();
-            //frm = _frm;
         }
 
         private void frmQuanLy_Load(object sender, EventArgs e)
@@ -42,7 +41,7 @@ namespace De1
 
         private void dtgvDanhSachKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtgvDanhSachKH.Rows.Count > 0)
+            if (dtgvDanhSachKH.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dtgvDanhSachKH.Rows[e.RowIndex];
                 txtMaKH.Text = row.Cells[0].Value.ToString();
@@ -66,6 +65,7 @@ namespace De1
                 //
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm khách hàng thành công!");
+                KHMoiThem = txtTenKH.Text;
                 conn.Close();
                 loadKhachHang();
                 btnMacDinh.PerformClick();
@@ -94,10 +94,11 @@ namespace De1
             SqlCommand cmd = conn.CreateCommand();
             if (txtMaKH.Text != "")
             {
-                cmd.CommandText = "Delete KhachHang where MaKH=@makh";
+                cmd.CommandText = "Delete FROM KhachHang where MaKH=@makh";
                 conn.Open();
                 cmd.Parameters.AddWithValue("@makh", txtMaKH.Text);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa khách hàng thành công!!!");
                 conn.Close();
                 loadKhachHang();
                 btnMacDinh.PerformClick();
@@ -111,15 +112,18 @@ namespace De1
         {
             if (rdTheoTen.Checked)
             {
-                //sử dụng thuộc tính RowFilter để tìm kiếm theo tên "TenKH"
-                string rowFilter = string.Format("{0} like '{1}'", "TenKH", "*" + txtTimKiem.Text + "*");
-                (dtgvDanhSachKH.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
-            }
-            if (rdTheoSDT.Checked)
-            {
-                //sử dụng thuộc tính RowFilter để tìm kiếm theo sdt "SoDienThoai"
-                string rowFilter = string.Format("{0} like '{1}'", "SoDienThoai", "*" + txtTimKiem.Text + "*");
-                (dtgvDanhSachKH.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+                if (rdTheoTen.Checked)
+                {
+                    //sử dụng thuộc tính RowFilter để tìm kiếm theo tên "TenKH"
+                    string rowFilter = string.Format("{0} like '{1}'", "TenKH", "*" + txtTimKiem.Text + "*");
+                    (dtgvDanhSachKH.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+                }
+                if (rdTheoSDT.Checked)
+                {
+                    //sử dụng thuộc tính RowFilter để tìm kiếm theo sdt "SoDienThoai"
+                    string rowFilter = string.Format("{0} like '{1}'", "SoDienThoai", "*" + txtTimKiem.Text + "*");
+                    (dtgvDanhSachKH.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+                }
             }
         }
         private void ExportExcel(string path)
@@ -158,13 +162,6 @@ namespace De1
                     MessageBox.Show("Lỗi xuất file!\n" + ex.Message);
                 }
             }
-        }
-
-        public void frmQuanLy_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //int index = cbbKhachHang.SelectedIndex;
-            //cbbKhachHang.SelectedIndex = -1;
-            //cbbKhachHang.SelectedIndex = index;
         }
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E87AA785-3B4E-4107-9EDB-4075631B3B23}</ProjectGuid>
+    <ProjectGuid>{41DED688-37E2-43EB-AD63-0A822C847E11}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>De3</RootNamespace>
-    <AssemblyName>De3</AssemblyName>
+    <RootNamespace>De2</RootNamespace>
+    <AssemblyName>De2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,25 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmQuanLyShop.cs">
+    <Compile Include="frmHoaNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyShop.Designer.cs">
-      <DependentUpon>frmQuanLyShop.cs</DependentUpon>
+    <Compile Include="frmHoaNhap.Designer.cs">
+      <DependentUpon>frmHoaNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThemLoaiMH.cs">
+    <Compile Include="frmQuanLyNCC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemLoaiMH.Designer.cs">
-      <DependentUpon>frmThemLoaiMH.cs</DependentUpon>
+    <Compile Include="frmQuanLyNCC.Designer.cs">
+      <DependentUpon>frmQuanLyNCC.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmQuanLyShop.resx">
-      <DependentUpon>frmQuanLyShop.cs</DependentUpon>
+    <EmbeddedResource Include="frmHoaNhap.resx">
+      <DependentUpon>frmHoaNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThemLoaiMH.resx">
-      <DependentUpon>frmThemLoaiMH.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanLyNCC.resx">
+      <DependentUpon>frmQuanLyNCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

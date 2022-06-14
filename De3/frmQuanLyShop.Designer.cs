@@ -84,41 +84,54 @@ namespace De3
             this.btnThem.Location = new System.Drawing.Point(161, 176);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 5;
+            this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnCapNhat
             // 
             this.btnCapNhat.Location = new System.Drawing.Point(262, 176);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(75, 23);
-            this.btnCapNhat.TabIndex = 5;
+            this.btnCapNhat.TabIndex = 7;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnThemLoai
             // 
             this.btnThemLoai.Location = new System.Drawing.Point(364, 86);
             this.btnThemLoai.Name = "btnThemLoai";
             this.btnThemLoai.Size = new System.Drawing.Size(75, 23);
-            this.btnThemLoai.TabIndex = 4;
+            this.btnThemLoai.TabIndex = 8;
             this.btnThemLoai.Text = "Thêm loại";
             this.btnThemLoai.UseVisualStyleBackColor = true;
+            this.btnThemLoai.Click += new System.EventHandler(this.btnThemLoai_Click);
             // 
             // nrudDonGia
             // 
             this.nrudDonGia.Location = new System.Drawing.Point(128, 139);
+            this.nrudDonGia.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nrudDonGia.Name = "nrudDonGia";
             this.nrudDonGia.Size = new System.Drawing.Size(230, 20);
-            this.nrudDonGia.TabIndex = 3;
+            this.nrudDonGia.TabIndex = 5;
             // 
             // nrudSoLuong
             // 
             this.nrudSoLuong.Location = new System.Drawing.Point(128, 111);
+            this.nrudSoLuong.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nrudSoLuong.Name = "nrudSoLuong";
             this.nrudSoLuong.Size = new System.Drawing.Size(230, 20);
-            this.nrudSoLuong.TabIndex = 3;
+            this.nrudSoLuong.TabIndex = 4;
             // 
             // cbbLoaiMH
             // 
@@ -126,20 +139,20 @@ namespace De3
             this.cbbLoaiMH.Location = new System.Drawing.Point(128, 83);
             this.cbbLoaiMH.Name = "cbbLoaiMH";
             this.cbbLoaiMH.Size = new System.Drawing.Size(230, 21);
-            this.cbbLoaiMH.TabIndex = 2;
+            this.cbbLoaiMH.TabIndex = 3;
             // 
             // txtTenMH
             // 
             this.txtTenMH.Location = new System.Drawing.Point(128, 55);
             this.txtTenMH.Name = "txtTenMH";
             this.txtTenMH.Size = new System.Drawing.Size(230, 20);
-            this.txtTenMH.TabIndex = 1;
+            this.txtTenMH.TabIndex = 2;
             // 
             // txtMaMH
             // 
-            this.txtMaMH.Enabled = false;
             this.txtMaMH.Location = new System.Drawing.Point(128, 26);
             this.txtMaMH.Name = "txtMaMH";
+            this.txtMaMH.ReadOnly = true;
             this.txtMaMH.Size = new System.Drawing.Size(230, 20);
             this.txtMaMH.TabIndex = 1;
             // 
@@ -213,7 +226,7 @@ namespace De3
             this.dtgvDanhSachMH.Name = "dtgvDanhSachMH";
             this.dtgvDanhSachMH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDanhSachMH.Size = new System.Drawing.Size(441, 225);
-            this.dtgvDanhSachMH.TabIndex = 0;
+            this.dtgvDanhSachMH.TabIndex = 9;
             this.dtgvDanhSachMH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDanhSachMH_CellContentClick);
             // 
             // Column1
